@@ -39,7 +39,8 @@ pip install ortools matplotlib pandas numpy
 
 ## Usage
 
-### Preparing Your Data
+### OR-Tools
+#### Prepare The Data
 
 Modify the `create_data_model` function in the script to reflect your specific problem instance. This includes:
 
@@ -71,7 +72,7 @@ Modify the `create_data_model` function in the script to reflect your specific p
     data["demands"] = [0, 5, 8, 3, 6, 5, 8, 3, 6, 5, 8] * len(vehicles)
     ```
 
-### Interpreting the Output
+#### Interpreting the Output
 
 The console output will provide detailed information about each vehicle's route, including:
 - The sequence of customer locations visited
@@ -91,13 +92,14 @@ The console output will provide detailed information about each vehicle's route,
     Depot -> C2 (9.071 km) -> C5 (1.603 km) -> C1 (4.838 km) -> C4 (4.020 km) -> C3 (8.322 km) -> Depot (10.347 km)
  ```
 
-### Visualizing the Routes
+#### Visualizing the Routes
 
 After running the solver, a graph will be displayed showing the routes taken by each vehicle, with different colors representing different vehicle types.
+
 ![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81)
 
 
-### Customizing the Solver
+#### Customizing the Solver
 
 You can customize the solver by modifying the constraints and parameters in the `main` function to better fit your needs. This includes changing the search parameters and the first solution strategy.
  ```python
@@ -110,11 +112,62 @@ You can customize the solver by modifying the constraints and parameters in the 
         routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
     )
     search_parameters.time_limit.FromSeconds(1)
-    ```
+ ```
+### Nearest Neighbor Heuristic
 
-## Result Diagrams
+The Nearest Neighbor heuristic is a simple and intuitive method used to approximate solutions for the CVRP. It works by starting at the depot, selecting the nearest unvisited customer, and repeating this process until the vehicle's capacity is reached or there are no more customers to visit.
 
-Before Optimization             | After Optimization
+#### Preparing The Data
+1. Define customer data file location
+Ensure you have customer data in an Excel file and set to correct path
+ ```python
+Read customer data from an Excel file
+    customer_data = pd.read_excel(r"C:\Users\User\Desktop\customerData.xlsx")
+ ```
+2. Set Depot Location
+
+Define the location of the depot where vehicles start and end their routes. You need to specify the latitude and longitude coordinates for the depot.
+```python
+# Define depot
+    depot = Depot(latitude=4.4184, longitude=114.0932)
+```
+
+3. Define Vehicle Types and Capacities
+
+Determine the number of vehicles and their types required for the delivery problem. You can define multiple vehicle types with different capacities. 
+```python
+# Define the number of vehicles of each type
+    num_type_a_vehicles = 2
+    num_type_b_vehicles = 1
+```
+
+4. Run the Solver
+
+Execute the main script to solve the delivery problem.
+
+#### Interpreting the Output
+
+The console output will provide detailed information about each vehicle's route:
+ ``` Total Distance = 106.88 km
+Total Cost = RM 137.65
+Vehicle 1 (Type A):
+Round Trip Distance: 53.582 km, Cost: RM 64.30, Demand: 25.0
+Depot -> C7 (6.508 km) -> C10 (6.018 km) -> C9 (5.060 km) -> C8 (11.358 km) -> C3 (14.290 km) -> Depot (10.347 km)
+Vehicle 2 (Type A):
+Round Trip Distance: 21.981 km, Cost: RM 26.38, Demand: 21.0
+Depot -> C6 (8.061 km) -> C2 (1.834 km) -> C5 (1.604 km) -> Depot (10.483 km)
+Vehicle 3 (Type B):
+Round Trip Distance: 31.315 km, Cost: RM 46.97, Demand: 11.0
+Depot -> C1 (13.152 km) -> C4 (4.021 km) -> Depot (14.142 km)
+ ```
+#### Visualizing the Routes
+![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/b5fa34ae-36bc-426a-b8bd-19daef251669)
+
+
+
+## Result Comparison between OR-tools and Nearest Neighbor
+
+OR-tools            | Neareast Neighbour
 :-------------------------:|:-------------------------:
-![Vehicle Routing Before Optimization](images/before_optimization.png) | ![Vehicle Routing After Optimization](images/after_optimization.png)
+![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81) | ![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/b5fa34ae-36bc-426a-b8bd-19daef251669)
 
