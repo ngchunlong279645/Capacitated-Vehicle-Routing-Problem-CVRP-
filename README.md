@@ -93,13 +93,6 @@ The console output will provide detailed information about each vehicle's route,
     Depot -> C2 (9.071 km) -> C5 (1.603 km) -> C1 (4.838 km) -> C4 (4.020 km) -> C3 (8.322 km) -> Depot (10.347 km)
  ```
 
-#### Visualizing the Routes
-
-After running the solver, a graph will be displayed showing the routes taken by each vehicle, with different colors representing different vehicle types.
-
-![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81)
-
-
 #### Customizing the Solver
 
 You can customize the solver by modifying the constraints and parameters in the `main` function to better fit your needs. This includes changing the search parameters and the first solution strategy.
@@ -149,7 +142,8 @@ Execute the main script to solve the delivery problem.
 #### Interpreting the Output
 
 The console output will provide detailed information about each vehicle's route:
- ``` Total Distance = 106.88 km
+ ```
+Total Distance = 106.88 km
 Total Cost = RM 137.65
 Vehicle 1 (Type A):
 Round Trip Distance: 53.582 km, Cost: RM 64.30, Demand: 25.0
@@ -161,10 +155,6 @@ Vehicle 3 (Type B):
 Round Trip Distance: 31.315 km, Cost: RM 46.97, Demand: 11.0
 Depot -> C1 (13.152 km) -> C4 (4.021 km) -> Depot (14.142 km)
  ```
-#### Visualizing the Routes
-![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/b5fa34ae-36bc-426a-b8bd-19daef251669)
-
-
 
 ## Result Comparison between OR-tools and Nearest Neighbor
 
