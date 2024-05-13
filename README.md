@@ -79,7 +79,8 @@ The console output will provide detailed information about each vehicle's route,
 - The distance traveled to each location
 - The total round trip distance and cost for each vehicle
 - The total demand satisfied by each vehicle
- ``` Total Distance = 94.875 km
+ ```
+    Total Distance = 94.875 km
     Total Cost = RM 125.31
     Vehicle 1 (Type A):
     Round Trip Distance: 40.554 km, Cost: RM 48.66, Demand: 22
