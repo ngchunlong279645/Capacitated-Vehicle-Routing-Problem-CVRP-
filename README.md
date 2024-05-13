@@ -88,16 +88,29 @@ The console output will provide detailed information about each vehicle's route,
     Depot -> C6 (8.060 km) -> Depot (8.060 km)
     Vehicle 3 (Type B):
     Round Trip Distance: 38.201 km, Cost: RM 57.30, Demand: 27
-    Depot -> C2 (9.071 km) -> C5 (1.603 km) -> C1 (4.838 km) -> C4 (4.020 km) -> C3 (8.322 km) -> Depot (10.347 km)```
+    Depot -> C2 (9.071 km) -> C5 (1.603 km) -> C1 (4.838 km) -> C4 (4.020 km) -> C3 (8.322 km) -> Depot (10.347 km)
+ ```
 
 ### Visualizing the Routes
 
-The script also includes a function to plot the routes on a graph. After running the solver, a graph will be displayed showing the routes taken by each vehicle, with different colors representing different vehicle types.
+After running the solver, a graph will be displayed showing the routes taken by each vehicle, with different colors representing different vehicle types.
+![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81)
+
 
 ### Customizing the Solver
 
 You can customize the solver by modifying the constraints and parameters in the `main` function to better fit your needs. This includes changing the search parameters and the first solution strategy.
-
+ ```python
+    # Setting first solution heuristic.
+    search_parameters = pywrapcp.DefaultRoutingSearchParameters()
+    search_parameters.first_solution_strategy = (
+        routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
+    )
+    search_parameters.local_search_metaheuristic = (
+        routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
+    )
+    search_parameters.time_limit.FromSeconds(1)
+    ```
 
 ## Result Diagrams
 
