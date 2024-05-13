@@ -155,13 +155,25 @@ Vehicle 3 (Type B):
 Round Trip Distance: 31.315 km, Cost: RM 46.97, Demand: 11.0
 Depot -> C1 (13.152 km) -> C4 (4.021 km) -> Depot (14.142 km)
  ```
+## Results Comparison
 
-## Result Comparison between OR-tools and Nearest Neighbor
+The following table compares the performance of the OR-tools and Nearest Neighbor heuristic:
 
-|OR-tools            | Neareast Neighbour|
-:-------------------------:|:-------------------------:
-![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81)| ![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/b5fa34ae-36bc-426a-b8bd-19daef251669)
-| **Total Distance**: 94.875 km<br>**Total Cost**: RM 125.31 | **Total Distance**: 106.88 km<br>**Total Cost**: RM 137.65 |
+| Method | Image | Total Distance | Total Cost |
+| ------ | ----- | -------------- | ---------- |
+| OR-tools |![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81)| **94.875 km** | **RM 125.31** |
+| Nearest Neighbor | ![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/b5fa34ae-36bc-426a-b8bd-19daef251669) | **106.88 km** | **RM 137.65** |
+
+### OR-tools Results
+- **Shorter total distance** compared to Nearest Neighbor.
+- **Lower total cost**, indicating a more efficient route optimization.
+
+### Nearest Neighbor Results
+- Provides a **quick approximation** of the route.
+- Useful for **initial planning** or when computational resources are limited.
+
+### Summary
+The OR-tools approach demonstrates superior optimization capabilities, yielding more cost-effective and shorter routes. The Nearest Neighbor heuristic, while not as optimal, offers a fast and simple solution that can be beneficial in certain scenarios.
 
 ## Further Explanation
 A detailed explanation of the approaches and solutions used in this project will be provided in the accompanying word file.
