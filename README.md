@@ -22,16 +22,16 @@ You can install them using pip:
 ### Preparing Your Data
 Modify the `create_data_model` function in the script to reflect your specific problem instance. This includes: 
 Define the number of vehicles of each type
-    num_type_a_vehicles = 2
-    num_type_b_vehicles = 1
+    `num_type_a_vehicles = 2`
+    `num_type_b_vehicles = 1`
 Define capacities and costs
-vehicles = []
+`vehicles = []
     for _ in range(num_type_a_vehicles):
         vehicles.append(Vehicle(type="Type A", capacity=25, cost_per_km=1.2))
     for _ in range(num_type_b_vehicles):
-        vehicles.append(Vehicle(type="Type B", capacity=30, cost_per_km=1.5))
+        vehicles.append(Vehicle(type="Type B", capacity=30, cost_per_km=1.5))`
 defining the locations and demands of your customers
- data["locations"] = [
+ `data["locations"] = [
         (4.4184, 114.0932), # Depot
         (4.3555, 113.9777), # Customers
         (4.3976, 114.0049),
@@ -44,7 +44,7 @@ defining the locations and demands of your customers
         (4.4935, 114.1828),
         (4.4932, 114.1322),
     ]
-    data["demands"] = [0, 5, 8, 3, 6, 5, 8, 3, 6, 5, 8] * len(vehicles)
+    data["demands"] = [0, 5, 8, 3, 6, 5, 8, 3, 6, 5, 8] * len(vehicles)`
 
 ## Result Diagrams
 ![Vehicle Routing Before Optimization](images/before_optimization.png)
