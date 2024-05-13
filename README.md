@@ -71,6 +71,34 @@ Modify the `create_data_model` function in the script to reflect your specific p
     data["demands"] = [0, 5, 8, 3, 6, 5, 8, 3, 6, 5, 8] * len(vehicles)
     ```
 
+### Interpreting the Output
+
+The console output will provide detailed information about each vehicle's route, including:
+- The sequence of customer locations visited
+- The distance traveled to each location
+- The total round trip distance and cost for each vehicle
+- The total demand satisfied by each vehicle
+ ``` Total Distance = 94.875 km
+    Total Cost = RM 125.31
+    Vehicle 1 (Type A):
+    Round Trip Distance: 40.554 km, Cost: RM 48.66, Demand: 22
+    Depot -> C7 (6.508 km) -> C10 (6.017 km) -> C9 (5.060 km) -> C8 (11.358 km) -> Depot (11.611 km)
+    Vehicle 2 (Type A):
+    Round Trip Distance: 16.120 km, Cost: RM 19.34, Demand: 8
+    Depot -> C6 (8.060 km) -> Depot (8.060 km)
+    Vehicle 3 (Type B):
+    Round Trip Distance: 38.201 km, Cost: RM 57.30, Demand: 27
+    Depot -> C2 (9.071 km) -> C5 (1.603 km) -> C1 (4.838 km) -> C4 (4.020 km) -> C3 (8.322 km) -> Depot (10.347 km)```
+
+### Visualizing the Routes
+
+The script also includes a function to plot the routes on a graph. After running the solver, a graph will be displayed showing the routes taken by each vehicle, with different colors representing different vehicle types.
+
+### Customizing the Solver
+
+You can customize the solver by modifying the constraints and parameters in the `main` function to better fit your needs. This includes changing the search parameters and the first solution strategy.
+
+
 ## Result Diagrams
 
 Before Optimization             | After Optimization
