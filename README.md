@@ -158,9 +158,8 @@ Depot -> C1 (13.152 km) -> C4 (4.021 km) -> Depot (14.142 km)
 
 ## Result Comparison between OR-tools and Nearest Neighbor
 
-OR-tools            | Neareast Neighbour
+|OR-tools            | Neareast Neighbour|
 :-------------------------:|:-------------------------:
 ![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/d6cea7f0-fbd2-460c-b5e6-02ca176bbd81)| ![image](https://github.com/ngchunlong279645/Capacitated-Vehicle-Routing-Problem-CVRP-/assets/73117650/b5fa34ae-36bc-426a-b8bd-19daef251669)
-| !OR-tools Route | !Nearest Neighbor Route |
 | **Total Distance**: 94.875 km<br>**Total Cost**: RM 125.31 | **Total Distance**: 106.88 km<br>**Total Cost**: RM 137.65 |
 
